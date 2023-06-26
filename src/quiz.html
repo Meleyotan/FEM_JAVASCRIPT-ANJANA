@@ -67,7 +67,7 @@
         <button name="true" value="true">true</button>
         <button name="false" value="false">false</button>
     </div>
-
+    <button id="next-question" name="next-question" disabled="">Next Question</button>
     <div id="explanation">
 
     </div>
@@ -91,9 +91,9 @@ const explanation = document.getElementById("explanation")
     // Its value should be an object with a statement, true/false answer, and explanation 
     
 const fact = {
-    statement: "An array is an object",
+    statement: "An array is an object?",
     answer: true,
-    explanation: "An array as for example []"
+    explanation: "Arrays are a kind of object specialized for storing sequences of things"
 }
     
     // TODO 3: Set the text of the statement element to the fact's statement
@@ -109,22 +109,13 @@ console.log(statement)
 
 const button = document.querySelectorAll("button")
 
-button[0].addEventListener("click", (event) => {
-    if (button[0].value == String(fact.answer)){
-        console.log("correct")
-    }
-    else{
-        console.log("incorrect")
-    }
-})
-
 // function enable(y){
 //     return (y[0].removeAttribute("disabled"))
 // }
 // enable(button)
 
-const disable = (x) => {x[0].setAttribute("disabled","")}
-const enable = (y) => {y[0].removeAttribute("disabled")}
+const disable = (x) => {x.setAttribute("disabled","")}
+const enable = (y) => {y.removeAttribute("disabled")}
 
     // TODO 5: Declare an isCorrect function that compares a guess to the right answer
     // isCorrect(guess) should return true if the guess matches the fact's answer
@@ -145,16 +136,24 @@ isCorrect(guess)
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
             // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
 for (let one of optionButtons){
-    one.addEventListener("click", (event)=>{
+    one.addEventListener("click", (event)=> {
         document.getElementById("explanation").textContent = fact.explanation
-    })
+        if (one.value == String(fact.answer)){
+        one.classList.add("correct")
+        console.log("correct")
+    }
+    else{
+        console.log("incorrect")
+        one.classList.add("incorrect")
+    }})
 }
 
             // TODO 7: Within the event handler function, 
             // Use a for loop to disable all the option buttons
 for (let one of optionButtons){
     one.addEventListener("click", (event)=>{
-        one.setAttribute("disabled","")
+        disable(optionButtons[0])
+        disable(optionButtons[1])
     })
 }
 
