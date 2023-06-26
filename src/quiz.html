@@ -129,11 +129,11 @@ function isCorrect(your_answer) {
 }
 const guess = true
 isCorrect(guess)
+
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
             // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
 for (let one of optionButtons){
     one.addEventListener("click", (event)=>{
-        fact.explanation = "An array is always an object"
         document.getElementById("explanation").textContent = fact.explanation
     })
 }
@@ -161,6 +161,30 @@ h1_element.addEventListener("mouseout", ()=>{
     h1_element.textContent = "Quiz.js"
 })
 
+//A conditional saying whether your last name is longer than your first name
+function which_is_longer(first,last){
+    if (first.length > last.length){
+        console.log(first, "is longer than", last)
+    }
+    else if(last.length < first.length){
+        console.log(last, "is longer than", first)
+    }
+    else{
+        console.log(first,"&",last,"have the same length")
+    }
+}
+
+//A function that checks whether an array is empty or not
+function isEmpty(any_array){
+    if (any_array.length > 0){
+        console.log("The array is not empty")
+    }
+    else{
+        console.log("The array is empty")
+    }
+}
+
+// let mood = forecast === "sunny" ? "happy" : "sad"
             // TODO 8: Within the event handler function,
             // Get the guessed value from the clicked button
             // Use a conditional to compare the guess to the fact's answer
