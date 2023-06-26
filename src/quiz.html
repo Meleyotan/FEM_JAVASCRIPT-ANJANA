@@ -109,6 +109,15 @@ console.log(statement)
 
 const button = document.querySelectorAll("button")
 
+button[0].addEventListener("click", (event) => {
+    if (button[0].value == String(fact.answer)){
+        console.log("correct")
+    }
+    else{
+        console.log("incorrect")
+    }
+})
+
 // function enable(y){
 //     return (y[0].removeAttribute("disabled"))
 // }
@@ -129,6 +138,9 @@ function isCorrect(your_answer) {
 }
 const guess = true
 isCorrect(guess)
+
+
+
 
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
             // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
@@ -183,6 +195,7 @@ function isEmpty(any_array){
         console.log("The array is empty")
     }
 }
+
 
 // let mood = forecast === "sunny" ? "happy" : "sad"
             // TODO 8: Within the event handler function,
