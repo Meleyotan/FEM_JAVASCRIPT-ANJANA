@@ -131,11 +131,35 @@ const guess = true
 isCorrect(guess)
     // TODO 6A: Use a for loop to add a click event listener to each of the optionButtons
             // TODO 6B: Within the event handler function, display the fact's explanation by setting the text of the explanation element
-
+for (let one of optionButtons){
+    one.addEventListener("click", (event)=>{
+        fact.explanation = "An array is always an object"
+        document.getElementById("explanation").textContent = fact.explanation
+    })
+}
 
             // TODO 7: Within the event handler function, 
             // Use a for loop to disable all the option buttons
+for (let one of optionButtons){
+    one.addEventListener("click", (event)=>{
+        one.setAttribute("disabled","")
+    })
+}
 
+//Changes the button text content to capital letters 
+button[0].addEventListener("click", ()=>{
+    button[0].textContent = button[0].textContent.toUpperCase()
+})
+
+//Changes on hover
+const h1_element = document.querySelector("h1")
+h1_element.addEventListener("mouseover", ()=>{
+    h1_element.textContent = "Hovering"
+})
+
+h1_element.addEventListener("mouseout", ()=>{
+    h1_element.textContent = "Quiz.js"
+})
 
             // TODO 8: Within the event handler function,
             // Get the guessed value from the clicked button
