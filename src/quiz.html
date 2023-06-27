@@ -30,7 +30,7 @@
             margin: 1rem 0px;
             min-height: 2em;
         }
-        #explanation {
+        #explanation,#score {
             padding: 1rem;
             text-align: center;
         }
@@ -56,6 +56,11 @@
     <header>
     <h1>Quiz.js</h1>
     <p>Do you know JS? Find out!</p>
+
+    <div id="score">
+        Score: <span id="correct">1</span> / <span id="completed"></span>
+    </div>
+
     </header>
 
     <main>
@@ -90,11 +95,14 @@ const explanation = document.getElementById("explanation")
     // TODO 2: Declare & assign a variable called fact
     // Its value should be an object with a statement, true/false answer, and explanation 
     
-const fact = {
+const fact = [{
     statement: "An array is an object?",
     answer: true,
     explanation: "Arrays are a kind of object specialized for storing sequences of things"
-}
+}]
+
+//No. of questions
+document.getElementById("completed").textContent = fact.length
     
     // TODO 3: Set the text of the statement element to the fact's statement
 statement.textContent = fact.statement
