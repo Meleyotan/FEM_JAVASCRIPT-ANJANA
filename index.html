@@ -159,7 +159,7 @@
         disable(nextButton);
       }
 
-      nextButton.addEventListener("click", getNextFact); //I don't know what this is doing
+      nextButton.addEventListener("click", getNextFact); //adding functions in event listener does not require the brackets
 
       for (let option of optionButtons) {
         option.addEventListener("click", (event) => {
@@ -191,7 +191,6 @@
           show(explanation);
 
           //update the score on screen
-          console.log(correct, typeof correct);
           document.getElementById("correct").textContent = correct;
         });
       }

@@ -41,3 +41,12 @@ const players = [
     {name: "Player Y", symbol: "Y"},
     {name: "Player Z", symbol: "Z"}
 ]
+
+function endsInY(something){
+    if (something.endsWith("y")){
+        return something
+    }
+}
+
+//using the filter method
+console.log(spices.filter((spice) => endsInY(spice.nickname)))
