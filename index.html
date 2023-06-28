@@ -157,44 +157,43 @@
 
         //disable next button
         disable(nextButton);
+      }
 
-        nextButton.addEventListener("click", getNextFact); //I don't know what this is doing
+      nextButton.addEventListener("click", getNextFact); //I don't know what this is doing
 
-        for (let option of optionButtons) {
-          option.addEventListener("click", (event) => {
-            //When the option is clicked
+      for (let option of optionButtons) {
+        option.addEventListener("click", (event) => {
+          //When the option is clicked
 
-            //disable all option buttons
-            for (let button of optionButtons) {
-              disable(button);
-            }
-            //enable next question if there are still questions left
+          //disable all option buttons
+          for (let button of optionButtons) {
+            disable(button);
+          }
+          //enable next question if there are still questions left
 
-            if (facts.length > 0) {
-              enable(nextButton);
-            } else {
-              nextButton.textContent = "No more questions";
-            }
+          if (facts.length > 0) {
+            enable(nextButton);
+          } else {
+            nextButton.textContent = "No more questions";
+          }
 
-            const guess = event.target.value;
+          const guess = event.target.value;
 
-            if (guess === fact.answer) {
-              event.target.classList.add("correct");
-              // update the score
-              correct += 1
-              console.log(correct)
+          if (guess === fact.answer) {
+            event.target.classList.add("correct");
+            // update the score
+            correct += 1;
+            console.log(correct);
+          } else {
+            event.target.classList.add("incorrect");
+          }
+          explanation.textContent = fact.explanation;
+          show(explanation);
 
-            } else {
-              event.target.classList.add("incorrect");
-            }
-            explanation.textContent = fact.explanation;
-            show(explanation);
-
-        //update the score on screen
-        console.log(correct, typeof(correct))
-        document.getElementById("correct").textContent = correct
-          });
-        }
+          //update the score on screen
+          console.log(correct, typeof correct);
+          document.getElementById("correct").textContent = correct;
+        });
       }
       getNextFact();
     </script>
