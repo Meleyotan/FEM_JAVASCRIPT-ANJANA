@@ -63,7 +63,7 @@
       <h1>Quiz.js</h1>
       <p>Do you know JS? Find out!</p>
       <div id="score">
-        Score: <span id="correct">1</span> / <span id="completed">5</span>
+        Score: <span id="correct">0</span> / <span id="completed">5</span>
       </div>
     </header>
 
@@ -114,8 +114,6 @@
         },
       ];
 
-
-
       function hide(element) {
         element.classList.add("hidden");
       }
@@ -131,7 +129,6 @@
       function enable(button) {
         button.removeAttribute("disabled");
       }
-
       let correct = 0;
       let completed = 0;
       let fact;
@@ -161,7 +158,7 @@
         //disable next button
         disable(nextButton);
 
-        nextButton.addEventListener("click", getNextFact);
+        nextButton.addEventListener("click", getNextFact); //I don't know what this is doing
 
         for (let option of optionButtons) {
           option.addEventListener("click", (event) => {
@@ -180,20 +177,25 @@
             }
 
             const guess = event.target.value;
+
             if (guess === fact.answer) {
               event.target.classList.add("correct");
-              correct += 1;
+              // update the score
+              correct += 1
+              console.log(correct)
+
             } else {
               event.target.classList.add("incorrect");
             }
             explanation.textContent = fact.explanation;
             show(explanation);
 
-            document.getElementById("correct").textContent = correct;
+        //update the score on screen
+        console.log(correct, typeof(correct))
+        document.getElementById("correct").textContent = correct
           });
         }
       }
-
       getNextFact();
     </script>
   </body>
