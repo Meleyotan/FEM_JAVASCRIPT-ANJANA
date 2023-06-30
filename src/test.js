@@ -15,3 +15,7 @@ function test(something) {
 test([1, 2, 4, 5, 6, 7])
 
 //Study about Asynchronous JavaScript from MDN Docs
+
+console.log("This will print first")
+setTimeout(() => { console.log("This will print last"), 1000 })
+console.log("This will print second")
