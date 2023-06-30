@@ -12,4 +12,6 @@ function test(something) {
   return new_array;
 }
 
-test([1,2,4,5,6,7])
+test([1, 2, 4, 5, 6, 7])
+
+//Study about Asynchronous JavaScript from MDN Docs
