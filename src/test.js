@@ -32,3 +32,17 @@ console.log("This will print second")
 
 // or you can use the then method on the fetch
 let response1 = fetch("https://dog.ceo/api/breed/hound/list").then((value) => {console.log(value)})
+
+//destructuring
+const spices = [
+    {name:"Emma", nickname: "Baby"},
+    {name:"Geri", nickname: "Ginger"},
+    {name:"Mel B", nickname: "Scary"},
+    {name:"Mel C", nickname: "Sporty"},
+    {name: "Victoria", nickname: "Posh"}
+]
+
+//assigning multiple varibles at once
+let [a, b, c, d, e] = spices
+console.log(a)
+//destructuring lets you pack elements from an object and assign it to variables
