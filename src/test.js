@@ -46,3 +46,13 @@ const spices = [
 let [a, b, c, d, e] = spices
 console.log(a)
 //destructuring lets you pack elements from an object and assign it to variables
+
+//to declare an asynchronous code, you have to wrap the function in an async word as in
+
+const link = "https://dog.ceo/api/breed/hound/list"
+async function fetchResponse(url) { 
+    let response = await fetch(url)
+    return response
+}
+
+await fetchResponse(url)
