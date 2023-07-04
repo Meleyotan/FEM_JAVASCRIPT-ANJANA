@@ -96,7 +96,7 @@
           const choices = []
           choices.push(correctAnswer)
           while(choices.length < n){
-            choice = getRandomElement(possibleChoice)
+            let choice = getRandomElement(possibleChoice)
             if (!choices.includes(choice)){
                 choices.push(choice)
             }
@@ -162,6 +162,14 @@
           // Create a button element whose name, value, and textContent properties are the value of that choice,
           // attach a "click" event listener with the buttonHandler function,
           // and append the button as a child of the options element
+          for (let choice in choicesArray){
+            const button = document.createElement("button")
+            button.textContent = choice
+            button.name = choice
+            button.value = choice
+            button.addEventListener("click", buttonHandler)
+            options.appendChild(button)
+          }
 
       }
 
@@ -193,7 +201,9 @@
 
       // TODO 5
       // Asynchronously call the loadQuizData() function,
+      const [url, correct, choices] = await loadQuizData()
       // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices
+      renderQuiz(url, correct, choices)
     </script>
   </body>
 </html>
