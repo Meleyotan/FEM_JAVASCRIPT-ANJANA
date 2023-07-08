@@ -1,0 +1,15 @@
+body{
+    margin: 1rem auto;
+    padding: 3rem;
+    font-family: serif;
+}
+header{
+    width: 70%;
+    margin: 1em auto;
+}
+main{
+    max-width: 70%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
